@@ -1,0 +1,50 @@
+
+<head>
+  <title>Add Customer</title>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link  href="index.html" >
+</head>
+<body class="bg-gray-100 font-sans">
+  <div class="flex justify-center items-center h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+      <h1 class="text-2xl font-bold mb-4">Add Customer</h1>
+      <form  class="space-y-4" action="https://sheetdb.io/api/v1/17q1pawg0k2qk" method="post" id="sheetdb-form" >
+        <div>
+          <label for="name" class="block font-medium text-gray-700 mb-2">Name:</label>
+          <input type="text" id="name" name="Name" class="border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full" required>
+        </div>
+        <div>
+          <label for="address" class="block font-medium text-gray-700 mb-2">Address:</label>
+          <input type="text" id="address" name="Address" class="border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full" required>
+        </div>
+        <div>
+          <label for="phoneNo" class="block font-medium text-gray-700 mb-2">Phone Number:</label>
+          <input type="tel" id="phoneNo" name="Phone" class="border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full" required>
+        </div>
+        <button type="submit"  class="bg-indigo-500 text-white font-medium py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 w-full">Add Customer</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("sheetdb-form")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+            // you can put any JS code here
+            window.open('index.html', '_blank');
+
+          });
+        });
+</script>
+
+
+</body>
