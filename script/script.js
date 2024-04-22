@@ -3,14 +3,7 @@ import { getDatabase, ref, onValue ,get,child } from "https://www.gstatic.com/fi
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-apiKey: "AIzaSyCwVbWu8UaaGlsV7aKlj7-gdHlu9MAxHMM",
-authDomain: "test-16285.firebaseapp.com",
-databaseURL: "https://test-16285-default-rtdb.firebaseio.com",
-projectId: "test-16285",
-storageBucket: "test-16285.appspot.com",
-messagingSenderId: "51591303284",
-appId: "1:51591303284:web:68ec610b89e018ee810121",
-measurementId: "G-VQBKJZ4RG2"
+
 };
 
 // Initialize Firebase
